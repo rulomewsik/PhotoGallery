@@ -3,7 +3,7 @@ This project is based on the development of a mobile application built with **Xa
 - Login and usage of biometrics.
 - Main page with random carousel photos.
 - Page with a list view with reordering features and swipe gestures
-- A basic profile page with dummy data and usage of camera.
+- A basic profile page with dummy data and usage of the camera.
 
 ## Xamarin.Forms (5.0.0.2337)
     - Xamarin.Essentials (1.7.1)
@@ -19,4 +19,5 @@ This project is based on the development of a mobile application built with **Xa
     - Bundle Identifier: com.atom.PhotoGallery
     - Version: 1.0.0
 
-# Demo video
+# Android demo video
+https://github.com/rulomewsik/PhotoGallery/assets/58819370/5f6cf963-d23d-46e3-88da-694218a94746
