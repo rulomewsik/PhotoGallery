@@ -1,0 +1,131 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Configurations>Debug;Release;Multiple</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Environments\Environment.xml" />
+    <None Remove="Helpers\Configuration\Configuration.json" />
+    <None Remove="Images\header_frame.svg" />
+    <None Remove="Images\header_frame_2.svg" />
+    <None Remove="Images\header_frame_3.svg" />
+    <None Remove="Images\header_frame_4.svg" />
+    <None Remove="Images\ic_back_arrow.svg" />
+    <None Remove="Images\ic_back_arrow_gray.svg" />
+    <None Remove="Images\ic_birthdate.svg" />
+    <None Remove="Images\ic_briefcase.svg" />
+    <None Remove="Images\ic_button_edit.svg" />
+    <None Remove="Images\ic_button_trash.svg" />
+    <None Remove="Images\ic_calendar_check.svg" />
+    <None Remove="Images\ic_calendar_feed.svg" />
+    <None Remove="Images\ic_calendar_green.svg" />
+    <None Remove="Images\ic_camera.svg" />
+    <None Remove="Images\ic_check.svg" />
+    <None Remove="Images\ic_check_gray.svg" />
+    <None Remove="Images\ic_close.svg" />
+    <None Remove="Images\ic_close_gray.svg" />
+    <None Remove="Images\ic_comment.svg" />
+    <None Remove="Images\ic_comment_session.svg" />
+    <None Remove="Images\ic_context_menu.svg" />
+    <None Remove="Images\ic_credential.svg" />
+    <None Remove="Images\ic_edit_camera.svg" />
+    <None Remove="Images\ic_edit_feed.svg" />
+    <None Remove="Images\ic_event_activity.svg" />
+    <None Remove="Images\ic_event_duration.svg" />
+    <None Remove="Images\ic_eye_password.svg" />
+    <None Remove="Images\ic_filter.svg" />
+    <None Remove="Images\ic_grade.svg" />
+    <None Remove="Images\ic_help.svg" />
+    <None Remove="Images\ic_leadership_badge.svg" />
+    <None Remove="Images\ic_mail.svg" />
+    <None Remove="Images\ic_medal.svg" />
+    <None Remove="Images\ic_menu_assignments.svg" />
+    <None Remove="Images\ic_menu_change_password.svg" />
+    <None Remove="Images\ic_menu_edit_profile.svg" />
+    <None Remove="Images\ic_menu_events.svg" />
+    <None Remove="Images\ic_menu_material.svg" />
+    <None Remove="Images\ic_menu_notification.svg" />
+    <None Remove="Images\ic_menu_surveys.svg" />
+    <None Remove="Images\ic_no_data.svg" />
+    <None Remove="Images\ic_phone.svg" />
+    <None Remove="Images\ic_picker_arrow.svg" />
+    <None Remove="Images\ic_pin.svg" />
+    <None Remove="Images\ic_profile_circle.svg" />
+    <None Remove="Images\ic_reference_material.svg" />
+    <None Remove="Images\ic_session_activity.svg" />
+    <None Remove="Images\ic_share.svg" />
+    <None Remove="Images\ic_sign_out.svg" />
+    <None Remove="Images\ic_survey_activity.svg" />
+    <None Remove="Images\ic_survey_finished.svg" />
+    <None Remove="Images\ic_tab_calendar_selected.svg" />
+    <None Remove="Images\ic_tab_menu.svg" />
+    <None Remove="Images\ic_tab_profile.svg" />
+    <None Remove="Images\ic_tab_profile_selected.svg" />
+    <None Remove="Images\ic_tab_survey.svg" />
+    <None Remove="Images\ic_tab_survey_selected.svg" />
+    <None Remove="Images\ic_thumbs_down.svg" />
+    <None Remove="Images\ic_thumbs_up.svg" />
+    <None Remove="Images\ic_training_activity.svg" />
+    <None Remove="Images\ic_user.svg" />
+    <None Remove="Images\logo.svg" />
+    <None Remove="Images\ic_tab_calendar_selected.svg" />
+    <None Remove="Images\logo_white.svg" />
+    <None Remove="SkiaSharp" />
+    <None Remove="SkiaSharp.Views.Forms" />
+    <None Remove="SkiaSharp.Views" />
+    <None Remove="Models\Surveys\" />
+    <None Remove="Images\ic_right_arrow.svg" />
+    <None Remove="Images\ic_eye_password_hide.svg" />
+    <None Remove="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Environments\Environment.xml" />
+    <EmbeddedResource Include="Helpers\Configuration\Configuration.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.2.0.562" />
+    <PackageReference Include="MvvmCross" Version="8.0.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="8.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Polly.Extensions.Http" Version="3.0.0" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="25.1.40" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+    <PackageReference Include="XamEffects" Version="1.6.3" />
+  </ItemGroup>
+
+    <ItemGroup>
+	    <Compile Update="Resources\AppResources.Designer.cs">
+		    <DesignTime>True</DesignTime>
+		    <AutoGen>True</AutoGen>
+		    <DependentUpon>AppResources.resx</DependentUpon>
+	    </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+	    <EmbeddedResource Update="Resources\AppResources.resx">
+		    <Generator>PublicResXFileCodeGenerator</Generator>
+		    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+		    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    </EmbeddedResource>
+    </ItemGroup>
+</Project>

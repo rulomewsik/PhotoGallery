@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage
+    BackgroundColor="{x:StaticResource LightGray_4}"
+    NavigationPage.HasNavigationBar="False"
+    ios:Page.UseSafeArea="True"
+    x:Class="PhotoGallery.UI.Pages.TabPage"
+    x:DataType="viewModels:TabViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:localViews="clr-namespace:PhotoGallery.UI.Views;assembly=PhotoGallery.UI"
+    xmlns:res="clr-namespace:PhotoGallery.Core.Resources;assembly=PhotoGallery.Core"
+    xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
+    xmlns:viewModels="clr-namespace:PhotoGallery.Core.ViewModels;assembly=PhotoGallery.Core"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <tabView:SfTabView
+        BackgroundColor="{x:StaticResource PrimaryColor}"
+        DisplayMode="ImageWithText"
+        EnableSwiping="False"
+        TabHeaderPosition="Bottom"
+        TabHeight="60"
+        VisibleHeaderCount="3">
+        <tabView:SfTabView.SelectionIndicatorSettings>
+            <tabView:SelectionIndicatorSettings
+                Color="{x:StaticResource PrimaryColorDark}"
+                Position="Bottom"
+                StrokeThickness="4" />
+        </tabView:SfTabView.SelectionIndicatorSettings>
+        <tabView:SfTabItem
+            FontIconFontFamily="FontAwesome"
+            IconFont="map"
+            SelectionColor="{x:StaticResource PrimaryColorLight}"
+            Title="{x:Static res:AppResources.MainTab}">
+            <tabView:SfTabItem.Content>
+                <localViews:CarouselView />
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem
+            FontIconFontFamily="FontAwesome"
+            IconFont="image"
+            SelectionColor="{x:StaticResource PrimaryColorLight}"
+            Title="{x:Static res:AppResources.PhotosTab}">
+            <tabView:SfTabItem.Content>
+                <localViews:PhotosView />
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+        <tabView:SfTabItem
+            FontIconFontFamily="FontAwesome"
+            IconFont="user"
+            SelectionColor="{x:StaticResource PrimaryColorLight}"
+            Title="{x:Static res:AppResources.ProfileTab}">
+            <tabView:SfTabItem.Content>
+                <localViews:ProfileView />
+            </tabView:SfTabItem.Content>
+        </tabView:SfTabItem>
+    </tabView:SfTabView>
+
+</views:MvxContentPage>

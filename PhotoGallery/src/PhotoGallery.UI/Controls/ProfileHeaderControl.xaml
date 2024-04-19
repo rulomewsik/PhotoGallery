@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<views:MvxContentView
+    BackgroundColor="{x:StaticResource PrimaryColor}"
+    x:Class="PhotoGallery.UI.Controls.ProfileHeaderControl"
+    x:Name="HeaderControlPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout>
+            <ffimageloading:CachedImage
+                CacheType="Disk"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"
+                Source="{Binding HeaderData.PictureSource}"
+                WidthRequest="100">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation BorderHexColor="#FFB858" BorderSize="20" />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+            <ffimageloading:CachedImage
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                Source="camera.png"
+                WidthRequest="40">
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ChangeProfilePictureAsyncCommand}" />
+                </ffimageloading:CachedImage.GestureRecognizers>
+            </ffimageloading:CachedImage>
+
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Style="{x:StaticResource Headline_H3}"
+                Text="{Binding HeaderData.NameFormat}"
+                TextColor="{x:StaticResource LightGray_1}"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentView.Content>
+</views:MvxContentView>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<views:MvxContentView
+    BackgroundColor="{x:StaticResource LightGray_5}"
+    x:Class="PhotoGallery.UI.Views.PhotosView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:behaviors="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:list="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:pulltoRefresh="clr-namespace:Syncfusion.SfPullToRefresh.XForms;assembly=Syncfusion.SfPullToRefresh.XForms"
+    xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+    xmlns:viewModels="clr-namespace:PhotoGallery.Core.ViewModels;assembly=PhotoGallery.Core"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <pulltoRefresh:SfPullToRefresh
+                HorizontalOptions="FillAndExpand"
+                IsRefreshing="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=IsRefreshing}"
+                ProgressBackgroundColor="{x:StaticResource PrimaryColor}"
+                RefreshCommand="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=RefreshDataAsyncCommand}"
+                RefreshContentHeight="50"
+                RefreshContentWidth="50"
+                Refreshed="SfPullToRefresh_OnRefreshed"
+                Refreshing="SfPullToRefresh_OnRefreshing"
+                TransitionMode="Push"
+                VerticalOptions="FillAndExpand">
+                <pulltoRefresh:SfPullToRefresh.PullableContent>
+                    <list:SfListView
+                        AllowSwiping="True"
+                        DragStartMode="OnHold"
+                        ItemDragging="SfListView_OnItemDragging"
+                        ItemSize="100"
+                        ItemSpacing="8"
+                        ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=PhotoItems}"
+                        SelectionMode="None"
+                        SwipeEnded="SfListView_OnSwipeEnded">
+                        <list:SfListView.RightSwipeTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    BackgroundColor="{StaticResource PrimaryColorRed}"
+                                    CornerRadius="8"
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Fill">
+                                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                        <ffimage:CachedImage
+                                            Grid.Column="0"
+                                            Grid.Row="0"
+                                            HeightRequest="35"
+                                            Source="trash.png"
+                                            WidthRequest="35">
+                                            <ffimage:CachedImage.Transformations>
+                                                <transformations:TintTransformation EnableSolidColor="true" HexColor="#FFFFFF" />
+                                            </ffimage:CachedImage.Transformations>
+                                        </ffimage:CachedImage>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </list:SfListView.RightSwipeTemplate>
+                        <list:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    BackgroundColor="{x:StaticResource PrimaryColorLight}"
+                                    BorderColor="{x:StaticResource DarkGray_3}"
+                                    CornerRadius="8">
+                                    <Grid ColumnDefinitions="Auto,*" Padding="2">
+                                        <ffimage:CachedImage
+                                            Aspect="AspectFit"
+                                            Grid.Column="0"
+                                            HeightRequest="50"
+                                            LoadingPlaceholder="gallery.png"
+                                            Source="{Binding Url}"
+                                            WidthRequest="50" />
+                                        <Label
+                                            Grid.Column="1"
+                                            Margin="8,0"
+                                            Style="{StaticResource Body}"
+                                            Text="{Binding Title}"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </list:SfListView.ItemTemplate>
+                        <list:SfListView.Behaviors>
+                            <behaviors:EventToCommandBehavior
+                                Command="{Binding DeletePhotoCommand}"
+                                EventArgsConverter="{StaticResource SwipeEndedEventArgsConverter}"
+                                EventName="SwipeEnded" />
+                        </list:SfListView.Behaviors>
+                    </list:SfListView>
+                </pulltoRefresh:SfPullToRefresh.PullableContent>
+            </pulltoRefresh:SfPullToRefresh>
+        </StackLayout>
+    </ContentView.Content>
+</views:MvxContentView>

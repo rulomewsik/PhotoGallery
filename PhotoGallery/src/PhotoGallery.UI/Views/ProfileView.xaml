@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<views:MvxContentView
+    BackgroundColor="{x:StaticResource LightGray_5}"
+    x:Class="PhotoGallery.UI.Views.ProfileView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:controls="clr-namespace:PhotoGallery.UI.Controls;assembly=PhotoGallery.UI"
+    xmlns:res="clr-namespace:PhotoGallery.Core.Resources;assembly=PhotoGallery.Core"
+    xmlns:viewModels="clr-namespace:PhotoGallery.Core.ViewModels;assembly=PhotoGallery.Core"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <controls:ProfileHeaderControl />
+            <ScrollView>
+                <StackLayout>
+                    <Frame
+                        BackgroundColor="{x:StaticResource LightGray_1}"
+                        CornerRadius="8"
+                        HasShadow="False"
+                        Margin="16"
+                        Padding="16">
+                        <StackLayout>
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,8"
+                                Style="{x:StaticResource Headline_H5}"
+                                Text="{x:Static res:AppResources.Information}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Age}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Age}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Gender}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Gender}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Email}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Email}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Phone}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Phone}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Address}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Address.ProfileAddress}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        BackgroundColor="{x:StaticResource LightGray_1}"
+                        CornerRadius="8"
+                        HasShadow="False"
+                        Margin="16"
+                        Padding="16">
+                        <StackLayout>
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,8"
+                                Style="{x:StaticResource Headline_H5}"
+                                Text="{x:Static res:AppResources.Geolocation}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Latitude}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Address.Coordinates.Lat}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Longitude}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Address.Coordinates.Lng}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.Altitude}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=ProfileData.Address.Coordinates.Alt}" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame
+                        BackgroundColor="{x:StaticResource LightGray_1}"
+                        CornerRadius="8"
+                        HasShadow="False"
+                        Margin="16"
+                        Padding="16">
+                        <StackLayout>
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,8"
+                                Style="{x:StaticResource Headline_H5}"
+                                Text="{x:Static res:AppResources.DeviceInformation}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.DeviceModel}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=DeviceModel}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.DeviceManufacturer}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=DeviceManufacturer}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.DeviceName}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=DeviceName}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.DeviceVersion}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=DeviceVersion}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="0,0,0,0"
+                                Style="{x:StaticResource Lead}"
+                                Text="{x:Static res:AppResources.DevicePlatform}" />
+                            <Label
+                                HorizontalOptions="Start"
+                                Margin="8,4,0,0"
+                                Style="{x:StaticResource Body}"
+                                Text="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=DevicePlatform}" />
+                        </StackLayout>
+                    </Frame>
+                    <Button
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TabViewModel}}, Path=SignOutAsyncCommand}"
+                        Margin="16,16,16,24"
+                        Style="{x:StaticResource Secondary_Button}"
+                        Text="{x:Static res:AppResources.SignOut}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentView.Content>
+</views:MvxContentView>

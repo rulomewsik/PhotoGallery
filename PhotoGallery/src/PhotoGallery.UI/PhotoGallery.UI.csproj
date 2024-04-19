@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Configurations>Debug;Release;Multiple</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Inter-Black.ttf" />
+    <None Remove="Fonts\Inter-Bold.ttf" />
+    <None Remove="Fonts\Inter-ExtraBold.ttf" />
+    <None Remove="Fonts\Inter-ExtraLight.ttf" />
+    <None Remove="Fonts\Inter-Light.ttf" />
+    <None Remove="Fonts\Inter-Medium.ttf" />
+    <None Remove="Fonts\Inter-Regular.ttf" />
+    <None Remove="Fonts\Inter-SemiBold.ttf" />
+    <None Remove="Fonts\Inter-Thin.ttf" />
+    <None Remove="Images\gallery.svg" />
+    <None Remove="SkiaSharp.Views" />
+    <None Remove="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\Inter-Black.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-ExtraBold.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-ExtraLight.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-Light.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-Medium.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-SemiBold.ttf" />
+    <EmbeddedResource Include="Fonts\Inter-Thin.ttf" />
+    <None Remove="Fonts\Font-Awesome.otf" />
+    <EmbeddedResource Include="Fonts\Font-Awesome.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.2.0.562" />
+    <PackageReference Include="MvvmCross" Version="8.0.2" />
+    <PackageReference Include="MvvmCross.Forms" Version="8.0.2" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="8.0.2" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.5" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.3" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPullToRefresh" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="25.1.40" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="XamEffects" Version="1.6.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoGallery.Core\PhotoGallery.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ProfileHeaderControl.xaml.cs">
+      <DependentUpon>ProfileHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\TabPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RootPage.xaml.cs">
+      <DependentUpon>RootPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\OnboardingPage.xaml.cs">
+      <DependentUpon>OnboardingPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CarouselView.xaml.cs">
+      <DependentUpon>CarouselView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PhotosView.xaml.cs">
+      <DependentUpon>PhotosView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Pages\RootPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

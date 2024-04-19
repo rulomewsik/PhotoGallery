@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<views:MvxContentPage
+    BackgroundColor="{x:StaticResource LightGray_3}"
+    NavigationPage.HasNavigationBar="False"
+    ios:Page.UseSafeArea="True"
+    x:Class="PhotoGallery.UI.Pages.OnboardingPage"
+    x:DataType="viewModels:OnboardingViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:res="clr-namespace:PhotoGallery.Core.Resources;assembly=PhotoGallery.Core"
+    xmlns:viewModels="clr-namespace:PhotoGallery.Core.ViewModels;assembly=PhotoGallery.Core"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout Padding="20,0">
+            <forms:CachedImage Margin="0,60" Source="gallery.png" />
+            <Label
+                HorizontalOptions="Start"
+                Style="{x:StaticResource Tags}"
+                Text="{x:Static res:AppResources.Email}" />
+
+            <Entry
+                IsSpellCheckEnabled="False"
+                Keyboard="Email"
+                Placeholder="{x:Static res:AppResources.Email_Placeholder}"
+                Style="{x:StaticResource Primary_Entry}"
+                Text="{Binding Email.Value}" />
+            <Label
+                HorizontalOptions="Start"
+                IsVisible="{Binding Email.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                Margin="2,0,0,0"
+                Style="{x:StaticResource ErrorTag}"
+                Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}" />
+
+            <Label
+                HorizontalOptions="Start"
+                Margin="0,32,0,0"
+                Style="{x:StaticResource Tags}"
+                Text="{x:Static res:AppResources.Password}" />
+
+            <Entry
+                IsPassword="true"
+                Placeholder="{x:Static res:AppResources.Password_Placeholder}"
+                Style="{x:StaticResource Primary_Entry}"
+                Text="{Binding Password.Value}" />
+            <Label
+                HorizontalOptions="Start"
+                IsVisible="{Binding Password.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                Margin="2,0,0,0"
+                Style="{x:StaticResource ErrorTag}"
+                Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}" />
+
+            <StackLayout
+                HorizontalOptions="End"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <CheckBox IsChecked="{Binding IsRememberChecked}" Style="{StaticResource Primary_CheckBox}" />
+                <Label
+                    HorizontalOptions="Start"
+                    Margin="0,0,0,0"
+                    Style="{x:StaticResource Tags}"
+                    Text="{x:Static res:AppResources.RememberMe}"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+
+            <Button
+                Command="{Binding LoginAsyncCommand}"
+                Margin="0,48,0,0"
+                Style="{x:StaticResource Primary_Button}"
+                Text="{x:Static res:AppResources.Login}" />
+
+            <forms:CachedImage
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Margin="0,48,0,0"
+                WidthRequest="100">
+                <forms:CachedImage.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="iOS" Value="face.png" />
+                        <On Platform="Android" Value="fingerprint.png" />
+                    </OnPlatform>
+                </forms:CachedImage.Source>
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding LoginBiometricsAsyncCommand}" />
+                </forms:CachedImage.GestureRecognizers>
+            </forms:CachedImage>
+        </StackLayout>
+    </ScrollView>
+</views:MvxContentPage>
