@@ -1,20 +1,23 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Photo Gallery App
+This project is based on the development of a mobile application built with **Xamarin.Forms** for the **Android** and **iOS** platforms which contain functionalities necessary to carry out tasks such as:
+- Login and usage of biometrics.
+- Main page with random carousel photos.
+- Page with a list view with reordering features and swipe gestures
+- A basic profile page with dummy data and usage of camera.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Xamarin.Forms (5.0.0.2337)
+    - Xamarin.Essentials (1.7.1)
+    - MvvmCross.Forms (8.0.2)
+    - Acr.UserDialogs (7.2.0.562)
+    - Newtonsoft.Json (13.0.1)
+    - RestSharp (106.15.0)
+    - Syncfusion.Xamarin.Core (25.1.40)
+## Xamarin.Android
+    - Bundle Identifier: com.atom.PhotoGallery
+    - Versión: 1.0.0
+## Xamarin.iOS
+    - Bundle Identifier: com.atom.PhotoGallery
+    - Version: 1.0.0
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Demo video
+![App demo in Android](doc/Demo.mp4 "App demo in Android")
