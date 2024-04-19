@@ -20,4 +20,3 @@ This project is based on the development of a mobile application built with **Xa
     - Version: 1.0.0
 
 # Demo video
-![App demo in Android](doc/Demo.mp4 "App demo in Android")
